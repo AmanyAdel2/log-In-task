@@ -27,7 +27,7 @@ struct AuthRequestHeaders {
 
 extension AuthRequestHeaders {
     static let `default` = AuthRequestHeaders(
-        appName: "moddakir",
+        appName: "wl_2",
         language: Locale.preferredLanguages.first?.prefix(2).lowercased() ?? "en",
         isKidsApp: false,
         userType: "User_S"

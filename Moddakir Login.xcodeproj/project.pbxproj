@@ -34,6 +34,7 @@
 		2297467C30834EE100BDDA54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297467B30834EE100BDDA54 /* HomeViewController.swift */; };
 		2297467E30834F1B00BDDA54 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297467D30834F1B00BDDA54 /* HomeViewModel.swift */; };
 		2297468030834F4700BDDA54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297467F30834F4700BDDA54 /* LoginViewController.swift */; };
+		2297468330840C7C00BDDA54 /* CompleteRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297468230840C7C00BDDA54 /* CompleteRegistrationViewController.swift */; };
 		229C3EAE3082C91E005E2808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C3EAD3082C91E005E2808 /* AppDelegate.swift */; };
 		229C3EB03082C91F005E2808 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C3EAF3082C91F005E2808 /* SceneDelegate.swift */; };
 		229C3EB23082C91F005E2808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C3EB13082C91F005E2808 /* ViewController.swift */; };
@@ -71,6 +72,7 @@
 		2297467B30834EE100BDDA54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2297467D30834F1B00BDDA54 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2297467F30834F4700BDDA54 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2297468230840C7C00BDDA54 /* CompleteRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegistrationViewController.swift; sourceTree = "<group>"; };
 		229C3EAA3082C91E005E2808 /* Moddakir Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moddakir Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		229C3EAD3082C91E005E2808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229C3EAF3082C91F005E2808 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				2297467B30834EE100BDDA54 /* HomeViewController.swift */,
 				2297467D30834F1B00BDDA54 /* HomeViewModel.swift */,
 				2297467F30834F4700BDDA54 /* LoginViewController.swift */,
+				2297468230840C7C00BDDA54 /* CompleteRegistrationViewController.swift */,
 			);
 			path = "Moddakir Login";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				2297465030834A2900BDDA54 /* AppCoordinator.swift in Sources */,
 				2297466A30834CF000BDDA54 /* PendingSocialAccount.swift in Sources */,
 				2297465630834B0400BDDA54 /* APIClient.swift in Sources */,
+				2297468330840C7C00BDDA54 /* CompleteRegistrationViewController.swift in Sources */,
 				2297465230834A7800BDDA54 /* DependencyContainer.swift in Sources */,
 				2297467630834DF400BDDA54 /* GoogleLoginStrategy.swift in Sources */,
 				2297466830834CC900BDDA54 /* Consumer.swift in Sources */,

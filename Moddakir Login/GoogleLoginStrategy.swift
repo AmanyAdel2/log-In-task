@@ -6,6 +6,7 @@
 //
 
 
+
 import Foundation
 import UIKit
 import GoogleSignIn
@@ -25,7 +26,7 @@ final class GoogleLoginStrategy: LoginStrategy {
 
     func authenticate() async -> Either<AuthError, AuthResult> {
 
-        guard let presenting = presenting else {
+        guard let presenting else {
             return .left(
                 .socialProvider("Missing presentation controller.")
             )
@@ -33,53 +34,52 @@ final class GoogleLoginStrategy: LoginStrategy {
 
         do {
             let credentials: SocialLoginCredentials =
-                try await withCheckedThrowingContinuation {
-                    (continuation: CheckedContinuation<SocialLoginCredentials, Error>) in
+                try await withCheckedThrowingContinuation { continuation in
 
-                    GIDSignIn.sharedInstance.signIn(
-                        withPresenting: presenting
-                    ) { result, error in
+                    Task { @MainActor in
+                        GIDSignIn.sharedInstance.signIn(
+                            withPresenting: presenting
+                        ) { result, error in
 
-                        if let error = error {
-                            continuation.resume(throwing: error)
-                            return
-                        }
+                            if let error {
+                                continuation.resume(throwing: error)
+                                return
+                            }
 
-                        guard let user = result?.user,
-                              let userID = user.userID else {
-                            continuation.resume(
-                                throwing: AuthError.socialProvider(
-                                    "Google user information is missing."
+                            guard let user = result?.user,
+                                  let userID = user.userID else {
+                                continuation.resume(
+                                    throwing: AuthError.socialProvider(
+                                        "Google user information is missing."
+                                    )
                                 )
+                                return
+                            }
+
+                            let credentials = SocialLoginCredentials(
+                                email: user.profile?.email,
+                                providerUserId: userID,
+                                providerType: "Google",
+                                phone: nil,
+                                fullName: user.profile?.name,
+                                gender: nil,
+                                country: nil,
+                                city: nil,
+                                address: nil,
+                                avatarUrl: user.profile?
+                                    .imageURL(withDimension: 200)?
+                                    .absoluteString,
+                                deviceUUID: UIDevice.current
+                                    .identifierForVendor?.uuidString,
+                                idfa: nil
                             )
-                            return
+
+                            continuation.resume(returning: credentials)
                         }
-
-                        let credentials = SocialLoginCredentials(
-                            email: user.profile?.email,
-                            providerUserId: userID,
-                            providerType: "Google",
-                            phone: nil,
-                            fullName: user.profile?.name,
-                            gender: nil,
-                            country: nil,
-                            city: nil,
-                            address: nil,
-                            avatarUrl: user.profile?
-                                .imageURL(withDimension: 200)?
-                                .absoluteString,
-                            deviceUUID: UIDevice.current
-                                .identifierForVendor?.uuidString,
-                            idfa: nil
-                        )
-
-                        continuation.resume(returning: credentials)
                     }
                 }
 
-            return await useCase.execute(
-                credentials: credentials
-            )
+            return await useCase.execute(credentials: credentials)
 
         } catch {
             return .left(

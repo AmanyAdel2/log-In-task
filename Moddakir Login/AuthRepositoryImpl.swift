@@ -26,11 +26,16 @@ final class AuthRepositoryImpl: AuthRepository {
                 local.saveCurrentUser(consumer)
                 return .right(.authenticated(consumer))
             case .pending(let dto):
-                let pending = PendingSocialAccountMapper.map(dto)
-                if let token = pending.accessToken {
-                    // Token kept in-memory by caller; persisted storage can be added here.
-                    _ = token
-                }
+                let mapped = PendingSocialAccountMapper.map(dto)
+
+                let pending = PendingSocialAccount(
+                    providerUserId: mapped.providerUserId,
+                    providerType: mapped.providerType,
+                    accessToken: mapped.accessToken,
+                    missingFields: mapped.missingFields,
+                    socialMediaAccountPending: mapped.socialMediaAccountPending,
+                    originalCredentials: credentials
+                )
                 return .right(.pending(pending))
             }
         } catch {

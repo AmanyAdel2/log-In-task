@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct SocialLoginCredentials {
+struct SocialLoginCredentials : Equatable{
     let email: String?
     let providerUserId: String
     let providerType: String
@@ -20,3 +20,45 @@ struct SocialLoginCredentials {
     let deviceUUID: String?
     let idfa: String?
 }
+
+extension SocialLoginCredentials {
+    func completingRegistration(
+        phone: String,
+        gender: String
+    ) -> SocialLoginCredentials {
+        SocialLoginCredentials(
+            email: email,
+            providerUserId: providerUserId,
+            providerType: providerType,
+            phone: phone,
+            fullName: fullName,
+            gender: gender,
+            country: country,
+            city: city,
+            address: address,
+            avatarUrl: avatarUrl,
+            deviceUUID: deviceUUID,
+            idfa: idfa
+        )
+    }
+}
+
+//extension SocialLoginCredentials {
+//    func completingRegistration(phone: String, gender: String) -> SocialLoginCredentials {
+//        SocialLoginCredentials(
+//            email: email,
+//            providerUserId: providerUserId,
+//            providerType: providerType,
+//            phone: phone,
+//            fullName: fullName,
+//            gender: gender,
+//            country: country,
+//            city: city,
+//            address: address,
+//            avatarUrl: avatarUrl,
+//            deviceUUID: deviceUUID,
+//            idfa: idfa
+//        )
+//    }
+//}
+
