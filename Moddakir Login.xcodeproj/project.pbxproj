@@ -44,6 +44,8 @@
 		229C3EBA3082C92B005E2808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229C3EB83082C92B005E2808 /* LaunchScreen.storyboard */; };
 		229C3EC53082E86B005E2808 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 229C3EC43082E86B005E2808 /* GoogleSignIn */; };
 		229C3EC73082E86B005E2808 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 229C3EC63082E86B005E2808 /* GoogleSignInSwift */; };
+		22A1A64A30861A3900864525 /* MockAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1A64930861A3900864525 /* MockAuthRepository.swift */; };
+		22A1A64C30861A8C00864525 /* AuthMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1A64B30861A8C00864525 /* AuthMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		229C3EB63082C92B005E2808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229C3EB93082C92B005E2808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229C3EBB3082C92B005E2808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A1A64930861A3900864525 /* MockAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthRepository.swift; sourceTree = "<group>"; };
+		22A1A64B30861A8C00864525 /* AuthMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 		229C3EA13082C91E005E2808 = {
 			isa = PBXGroup;
 			children = (
+				22A1A64930861A3900864525 /* MockAuthRepository.swift */,
+				22A1A64B30861A8C00864525 /* AuthMapperTests.swift */,
 				229C3EAC3082C91E005E2808 /* Moddakir Login */,
 				229C3EAB3082C91E005E2808 /* Products */,
 			);
@@ -399,7 +405,9 @@
 				2297467030834D6F00BDDA54 /* AuthRepository.swift in Sources */,
 				2297466C30834D1700BDDA54 /* SocialLoginCredentials.swift in Sources */,
 				2297467830834E3B00BDDA54 /* LoginStrategy.swift in Sources */,
+				22A1A64A30861A3900864525 /* MockAuthRepository.swift in Sources */,
 				2297466630834C9F00BDDA54 /* AuthResult.swift in Sources */,
+				22A1A64C30861A8C00864525 /* AuthMapperTests.swift in Sources */,
 				2297466E30834D4B00BDDA54 /* AuthError.swift in Sources */,
 				22972A823085FFA700078334 /* LoginviewModel.swift in Sources */,
 				2297465E30834BB500BDDA54 /* AuthLocalDataSource.swift in Sources */,
