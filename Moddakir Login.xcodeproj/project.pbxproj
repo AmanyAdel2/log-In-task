@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22972A823085FFA700078334 /* LoginviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22972A813085FFA700078334 /* LoginviewModel.swift */; };
 		2297464C308349D300BDDA54 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2297464B308349D300BDDA54 /* Alamofire */; };
 		2297464E308349D300BDDA54 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2297464D308349D300BDDA54 /* AlamofireDynamic */; };
 		2297465030834A2900BDDA54 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297464F30834A2900BDDA54 /* AppCoordinator.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		220B763C3082FB3900C981F1 /* Moddakir Login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Moddakir Login.entitlements"; sourceTree = "<group>"; };
+		22972A813085FFA700078334 /* LoginviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginviewModel.swift; sourceTree = "<group>"; };
 		2297464F30834A2900BDDA54 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2297465130834A7800BDDA54 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		2297465330834AE100BDDA54 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
@@ -98,9 +100,161 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22972A713085FCAF00078334 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				229C3EAF3082C91F005E2808 /* SceneDelegate.swift */,
+				2297465130834A7800BDDA54 /* DependencyContainer.swift */,
+				2297464F30834A2900BDDA54 /* AppCoordinator.swift */,
+				229C3EAD3082C91E005E2808 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		22972A723085FD0600078334 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				22972A733085FD1A00078334 /* network */,
+				2297465330834AE100BDDA54 /* Either.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		22972A733085FD1A00078334 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2297465930834B4F00BDDA54 /* AuthRequestHeaders.swift */,
+				2297465730834B2F00BDDA54 /* AuthEndpoint.swift */,
+				2297465530834B0400BDDA54 /* APIClient.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		22972A743085FD4D00078334 /* DTOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTOS;
+			sourceTree = "<group>";
+		};
+		22972A753085FD7E00078334 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				2297465D30834BB500BDDA54 /* AuthLocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		22972A763085FDA500078334 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				2297465F30834BE600BDDA54 /* AuthMappers.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		22972A773085FDC800078334 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				2297466130834C1900BDDA54 /* AuthRemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		22972A783085FDEE00078334 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				2297466F30834D6F00BDDA54 /* AuthRepository.swift */,
+				2297466330834C5000BDDA54 /* AuthRepositoryImpl.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		22972A793085FE0800078334 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				22972A7D3085FECC00078334 /* Usecase */,
+				22972A7C3085FE6C00078334 /* Strategies */,
+				22972A7B3085FE4200078334 /* Error */,
+				22972A7A3085FE1800078334 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		22972A7A3085FE1800078334 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2297466B30834D1700BDDA54 /* SocialLoginCredentials.swift */,
+				2297466530834C9F00BDDA54 /* AuthResult.swift */,
+				2297466930834CF000BDDA54 /* PendingSocialAccount.swift */,
+				2297466730834CC900BDDA54 /* Consumer.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		22972A7B3085FE4200078334 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				2297466D30834D4B00BDDA54 /* AuthError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		22972A7C3085FE6C00078334 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				2297467330834DBD00BDDA54 /* EmailLoginStrategy.swift */,
+				2297467530834DF400BDDA54 /* GoogleLoginStrategy.swift */,
+				2297467130834D8B00BDDA54 /* AppleLoginStrategy.swift */,
+				2297467730834E3B00BDDA54 /* LoginStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		22972A7D3085FECC00078334 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				2297467930834E7500BDDA54 /* SocialLoginUseCase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		22972A7E3085FEEF00078334 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				22972A803085FF5900078334 /* viewmodel */,
+				22972A7F3085FF4600078334 /* view */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		22972A7F3085FF4600078334 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2297468230840C7C00BDDA54 /* CompleteRegistrationViewController.swift */,
+				2297467F30834F4700BDDA54 /* LoginViewController.swift */,
+				2297467B30834EE100BDDA54 /* HomeViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		22972A803085FF5900078334 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				2297467D30834F1B00BDDA54 /* HomeViewModel.swift */,
+				22972A813085FFA700078334 /* LoginviewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 		229746813083674500BDDA54 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				22972A783085FDEE00078334 /* Repo */,
+				22972A773085FDC800078334 /* Remote */,
+				22972A763085FDA500078334 /* Mapper */,
+				22972A753085FD7E00078334 /* Local */,
+				22972A743085FD4D00078334 /* DTOS */,
 				2297465B30834B7300BDDA54 /* AuthDTOs.swift */,
 			);
 			path = Data;
@@ -125,40 +279,17 @@
 		229C3EAC3082C91E005E2808 /* Moddakir Login */ = {
 			isa = PBXGroup;
 			children = (
+				22972A7E3085FEEF00078334 /* Presentation */,
+				22972A793085FE0800078334 /* Domain */,
+				22972A723085FD0600078334 /* core */,
+				22972A713085FCAF00078334 /* App */,
 				229746813083674500BDDA54 /* Data */,
 				220B763C3082FB3900C981F1 /* Moddakir Login.entitlements */,
-				229C3EAD3082C91E005E2808 /* AppDelegate.swift */,
-				229C3EAF3082C91F005E2808 /* SceneDelegate.swift */,
 				229C3EB13082C91F005E2808 /* ViewController.swift */,
 				229C3EB33082C91F005E2808 /* Main.storyboard */,
 				229C3EB63082C92B005E2808 /* Assets.xcassets */,
 				229C3EB83082C92B005E2808 /* LaunchScreen.storyboard */,
 				229C3EBB3082C92B005E2808 /* Info.plist */,
-				2297464F30834A2900BDDA54 /* AppCoordinator.swift */,
-				2297465130834A7800BDDA54 /* DependencyContainer.swift */,
-				2297465330834AE100BDDA54 /* Either.swift */,
-				2297465530834B0400BDDA54 /* APIClient.swift */,
-				2297465730834B2F00BDDA54 /* AuthEndpoint.swift */,
-				2297465930834B4F00BDDA54 /* AuthRequestHeaders.swift */,
-				2297465D30834BB500BDDA54 /* AuthLocalDataSource.swift */,
-				2297465F30834BE600BDDA54 /* AuthMappers.swift */,
-				2297466130834C1900BDDA54 /* AuthRemoteDataSource.swift */,
-				2297466330834C5000BDDA54 /* AuthRepositoryImpl.swift */,
-				2297466530834C9F00BDDA54 /* AuthResult.swift */,
-				2297466730834CC900BDDA54 /* Consumer.swift */,
-				2297466930834CF000BDDA54 /* PendingSocialAccount.swift */,
-				2297466B30834D1700BDDA54 /* SocialLoginCredentials.swift */,
-				2297466D30834D4B00BDDA54 /* AuthError.swift */,
-				2297466F30834D6F00BDDA54 /* AuthRepository.swift */,
-				2297467130834D8B00BDDA54 /* AppleLoginStrategy.swift */,
-				2297467330834DBD00BDDA54 /* EmailLoginStrategy.swift */,
-				2297467530834DF400BDDA54 /* GoogleLoginStrategy.swift */,
-				2297467730834E3B00BDDA54 /* LoginStrategy.swift */,
-				2297467930834E7500BDDA54 /* SocialLoginUseCase.swift */,
-				2297467B30834EE100BDDA54 /* HomeViewController.swift */,
-				2297467D30834F1B00BDDA54 /* HomeViewModel.swift */,
-				2297467F30834F4700BDDA54 /* LoginViewController.swift */,
-				2297468230840C7C00BDDA54 /* CompleteRegistrationViewController.swift */,
 			);
 			path = "Moddakir Login";
 			sourceTree = "<group>";
@@ -270,6 +401,7 @@
 				2297467830834E3B00BDDA54 /* LoginStrategy.swift in Sources */,
 				2297466630834C9F00BDDA54 /* AuthResult.swift in Sources */,
 				2297466E30834D4B00BDDA54 /* AuthError.swift in Sources */,
+				22972A823085FFA700078334 /* LoginviewModel.swift in Sources */,
 				2297465E30834BB500BDDA54 /* AuthLocalDataSource.swift in Sources */,
 				229C3EB03082C91F005E2808 /* SceneDelegate.swift in Sources */,
 				2297465A30834B4F00BDDA54 /* AuthRequestHeaders.swift in Sources */,
